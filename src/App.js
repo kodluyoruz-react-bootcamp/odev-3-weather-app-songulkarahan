@@ -1,13 +1,12 @@
-import Dropdown from "./components/Dropdown";
-import citys from "./data/citys.json";
-import { useState } from "react";
+import Main from "./components/Main";
+import Wrapper from "./components/Wrapper";
 
 function App() {
-  const [value, setValue] = useState(citys[56]);
-  console.log(value);
   return (
-    <div style={{ width: 200 }}>
-      <Dropdown citys={citys} value={value} onChange={(val) => setValue(val)} />
+    <div className="container-sm" style={{ width: 200 }}>
+      <Wrapper>
+        <Main />
+      </Wrapper>
     </div>
   );
 }

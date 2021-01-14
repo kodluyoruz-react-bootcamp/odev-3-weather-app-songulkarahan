@@ -1,28 +1,26 @@
-import React from "react";
-import { useState } from "react";
+import React, { useContext } from "react";
+import Context from "../../context/Context";
 import "./style.css";
 
-function Dropdown({ citys, value, onChange }) {
-  const [open, setOpen] = useState(false);
+function Dropdown() {
+  const { citys, city, setCity, open, setOpen } = useContext(Context);
   return (
     <div className="dropdown">
       <div className="control" onClick={() => setOpen((prev) => !prev)}>
-        <div className="selected-value">
-          {value ? value.name : "Select city"}
-        </div>
+        <div className="selected-value">{city ? city.name : "Select city"}</div>
         <div className={`arrow ${open ? "open" : null}`} />
       </div>
       <div className={`options ${open ? "open" : null}`}>
-        {citys.map((city, index) => (
+        {citys.map((c, index) => (
           <div
             key={index}
             className="option"
             onClick={() => {
-              onChange(city);
+              setCity(c);
               setOpen(false);
             }}
           >
-            {city.name}
+            {c.name}
           </div>
         ))}
       </div>
