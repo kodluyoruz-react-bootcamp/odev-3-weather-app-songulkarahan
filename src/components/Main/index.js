@@ -1,17 +1,32 @@
-import Dropdown from "../Dropdown";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Context from "../../context/Context";
 import citys from "../../data/citys.json";
+import axios from "axios";
 
+import Dropdown from "../Dropdown";
+import Dashboard from "../Dashboard";
 function Main() {
   const [open, setOpen] = useState(false);
   const [city, setCity] = useState(citys[56]);
+  const [weather, setWeather] = useState([]);
 
-  console.log(city);
+  useEffect(() => {
+    async function getData() {
+      const API_KEY = "4a8549b3b79945af963010fab95a8df0";
+      const url = `https://api.weatherbit.io/v2.0/forecast/daily?city=${city.name},TR&units=M&days=7&lang=tr&key=${API_KEY}
+            `;
+      const response = await axios.get(url);
+      setWeather(response.data);
+    }
+    getData();
+  }, [city]);
   return (
-    <div>
-      <Context.Provider value={{ citys, open, setOpen, city, setCity }}>
+    <div className="container-md">
+      <Context.Provider
+        value={{ citys, open, setOpen, city, setCity, weather, setWeather }}
+      >
         <Dropdown />
+        <Dashboard />
       </Context.Provider>
     </div>
   );

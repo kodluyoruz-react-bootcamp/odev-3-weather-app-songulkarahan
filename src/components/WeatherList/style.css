@@ -1,0 +1,5 @@
+.weather-list {
+  margin-top: 30px;
+  display: flex;
+  vertical-align: top;
+}

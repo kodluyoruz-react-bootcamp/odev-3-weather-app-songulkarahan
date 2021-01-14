@@ -1,0 +1,24 @@
+.weather {
+  width: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 7px;
+  border-radius: 5px;
+  color: #1e202b;
+}
+
+.weather-header {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: center;
+  font-weight: 400;
+}
+.day {
+}
+.weather-content {
+  text-align: left;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.weather-icon {
+}

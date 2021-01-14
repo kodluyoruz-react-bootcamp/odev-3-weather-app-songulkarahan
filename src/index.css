@@ -1,10 +1,29 @@
 body {
-  margin: 120px;
+  margin: 100px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fd746c;
+  background: -webkit-linear-gradient(
+    left top,
+    #fd746c,
+    #feb47b
+  ); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(
+    bottom right,
+    #fd746c,
+    #feb47b
+  ); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(
+    bottom right,
+    #fd746c,
+    #feb47b
+  ); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #fd746c, #feb47b);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 code {
