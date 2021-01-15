@@ -1,33 +1,55 @@
 .forecast.today {
-  width: 100%;
+  width: 80%;
+  height: 60%;
   margin: 30px auto;
   border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   color: #1e202b;
 }
-.forecast.today .forecast-header .today {
+
+.forecast.today .forecast-footer .today {
+  padding: 8px;
   float: left;
 }
-.forecast.today .forecast-header .date {
+.forecast.today .forecast-footer .date {
+  padding: 8px;
   float: right;
 }
 .forecast.today .forecast-content {
   text-align: left;
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 .forecast.today .location {
   font-weight: 400;
   font-size: 4em;
+  float: left;
 }
 
-.forecast.today .degree .forecast-icon {
-  display: inline-block;
-  vertical-align: middle;
+.forecast-flex-container {
+  text-align: center;
+  width: 80%;
+  min-height: 300px;
+  margin: 0 auto;
+  display: -webkit-flex; /* Safari */
+  display: flex; /* Standard syntax */
 }
-.forecast.today .degree .num {
-  margin-right: 30px;
-  font-size: 3em;
+.forecast-flex-container .degree {
+  padding: 0px;
+  float: right;
+  width: 50%;
+  margin: auto;
+  -webkit-flex: 1; /* Safari */
+  -ms-flex: 1; /* IE 10 */
+  flex: 1; /* Standard syntax */
+}
+.forecast-flex-container .forecast-icon {
+  width: 50%;
+  margin: auto;
+  padding: 0%;
+  float: right;
+}
+
+.forecast-flex-container .degree .num {
+  font-size: 4em;
 }
 .forecast.today span {
   margin-right: 20px;

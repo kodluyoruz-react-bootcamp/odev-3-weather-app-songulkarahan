@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import Icon from "../Icon";
 
 function Weather() {
   return (
@@ -9,7 +10,7 @@ function Weather() {
       </div>
       <div className="weather-content">
         <div className="weather-icon">
-          <img src="images/icons/icon-3.svg" alt="" />
+          <Icon />
         </div>
         <div className="degree">
           23<sup>o</sup>C
