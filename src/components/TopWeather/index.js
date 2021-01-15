@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
 import Context from "../../context/Context";
-import TopIcon from "../TopIcon";
 import "./style.css";
 function TopWeather() {
   const { weather, city } = useContext(Context);
-  // console.log(weather[0].temp);
+  const data = weather[0];
+  const iconData = data.weather;
+  const icon = Object.values(iconData);
+  const iconUrl =
+    "https://www.weatherbit.io/static/img/icons/" + icon[0] + ".png";
 
-  let data = weather[0];
-  // console.log(data);
-  // console.log(weather);
   const location = city.name;
-  var monthNames = [
+  const monthNames = [
     "Ocak",
     "Şubat",
     "Mart",
@@ -24,7 +24,7 @@ function TopWeather() {
     "Kasım",
     "Aralık",
   ];
-  var days = [
+  const days = [
     "Pazar",
     "Pazartesi",
     "Salı",
@@ -33,17 +33,16 @@ function TopWeather() {
     "Cuma",
     "Cumartesi",
   ];
-  var date = new Date(data.datetime);
-  var dateNumber = date.getDate();
-  var day = new Date(data.datetime);
-  var dayName = days[day.getDay()];
-  var month = new Date(data.datetime);
-  var monthName = monthNames[month.getMonth()];
-  /*  */
+  const date = new Date(data.datetime);
+  const dateNumber = date.getDate();
+  const day = new Date(data.datetime);
+  const dayName = days[day.getDay()];
+  const month = new Date(data.datetime);
+  const monthName = monthNames[month.getMonth()];
 
   return (
     <div>
-      <div className="today forecast">
+      <div className="forecast-today">
         <div className="forecast-content">
           <div className="forecast-flex-container">
             <div className="degree">
@@ -52,18 +51,22 @@ function TopWeather() {
                 {data.temp}
                 <sup>o</sup>C
               </div>
-              <span>{data.max_temp}</span>
-              <span>{data.min_temp}</span>
-              <span>East</span>
+              <div>
+                <span>Max: {data.max_temp}</span>
+                <span>Min: {data.min_temp}</span>
+              </div>
+              <span>{icon[2]} </span>
               <div className="forecast-footer">
-                <div className="today">{dayName}</div>
                 <div className="date">
-                  {dateNumber} {monthName}
+                  <p>
+                    {dateNumber} {monthName} {dayName}
+                  </p>
                 </div>
               </div>
             </div>
+
             <div className="forecast-icon">
-              <TopIcon />
+              <img src={iconUrl} alt="" width="250px" />
             </div>
           </div>
         </div>

@@ -17,6 +17,7 @@ function Main() {
             `;
       const response = await axios.get(url).then((r) => r.data);
       setWeather(response.data);
+      //setIcon(weather.data.weather)
     }
     getData();
   }, [city]);

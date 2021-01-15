@@ -1,23 +1,38 @@
 import React from "react";
 import "./style.css";
-import Icon from "../Icon";
-
-function Weather() {
+function Weather({ item, index }) {
+  const days = [
+    "Pazar",
+    "Pazartesi",
+    "Salı",
+    "Çarşamba",
+    "Perşembe",
+    "Cuma",
+    "Cumartesi",
+  ];
+  const day = new Date(item.datetime);
+  const dayName = days[day.getDay()];
   return (
     <div className="weather">
       <div className="weather-header">
-        <div className="day">Tuesday</div>
+        <div className="day">{dayName}</div>
       </div>
       <div className="weather-content">
         <div className="weather-icon">
-          <Icon />
+          <img
+            src={`https://www.weatherbit.io/static/img/icons/${item.weather.icon}.png`}
+            alt=""
+          />
         </div>
         <div className="degree">
-          23<sup>o</sup>C
+          {item.max_temp}
+          <sup>o</sup>C
         </div>
         <small>
-          18<sup>o</sup>
+          {item.min_temp}
+          <sup>o</sup>
         </small>
+        <div>{item.weather.description}</div>
       </div>
     </div>
   );

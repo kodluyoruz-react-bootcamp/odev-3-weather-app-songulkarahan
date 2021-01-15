@@ -6,11 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fd746c;
-  background: -webkit-linear-gradient(
-    left top,
-    #fd746c,
-    #feb47b
-  ); /* For Safari 5.1 to 6.0 */
+  background: -webkit-linear-gradient(left top, #fd746c, #feb47b);
   background: -o-linear-gradient(
     bottom right,
     #fd746c,
@@ -21,7 +17,12 @@ body {
     #fd746c,
     #feb47b
   ); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, #fd746c, #feb47b);
+  background: linear-gradient(
+    to bottom right,
+    #fd746c,
+    #feb47b
+  ); /* For Safari 5.1 to 6.0 */
+
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
